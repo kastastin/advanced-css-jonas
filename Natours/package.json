@@ -4,11 +4,12 @@
   "description": "Landing page for Natours",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "live-server & sass --watch sass/main.scss css/style.css"
   },
   "author": "kastastin",
   "license": "ISC",
   "devDependencies": {
+    "live-server": "^1.2.2",
     "sass": "^1.69.5"
   }
 }
