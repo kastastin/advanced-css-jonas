@@ -10,6 +10,43 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
   </head>
   <body>
+    <div class="navigation">
+      <input id="nav-toggle" type="checkbox" class="navigation__checkbox" />
+      <label for="nav-toggle" class="navigation__button"
+        ><span class="navigation__icon">&nbsp;</span></label
+      >
+      <div class="navigation__background">&nbsp;</div>
+      <div class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#section-about" class="navigation__link"
+              ><span>01</span>About Natous</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#section-features" class="navigation__link"
+              ><span>02</span>Your benefits</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#section-tours" class="navigation__link"
+              ><span>03</span>Poopular tours</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#section-stories" class="navigation__link"
+              ><span>04</span>Stories</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#section-book" class="navigation__link"
+              ><span>05</span>Book now</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <header class="header">
       <div class="header__logo-box">
         <img src="img/logo-white.png" class="header__logo" alt="Logo" />
@@ -19,12 +56,14 @@
           <span class="heading-primary--main">Outdoors</span>
           <span class="heading-primary--sub">is where life happens</span>
         </h1>
-        <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+        <a href="#section-tours" class="btn btn--white btn--animated"
+          >Discover our tours</a
+        >
       </div>
     </header>
 
     <main>
-      <section class="section-about">
+      <section id="section-about" class="section-about">
         <div class="u-center-text u-mb-big">
           <h2 class="heading-secondary">
             Exciting tours for adventurous people
@@ -71,7 +110,7 @@
         </div>
       </section>
 
-      <section class="section-features">
+      <section id="section-features" class="section-features">
         <div class="row">
           <div class="col-1-of-4">
             <div class="feature-box">
@@ -116,7 +155,7 @@
         </div>
       </section>
 
-      <section class="section-tours">
+      <section id="section-tours" class="section-tours">
         <div class="u-center-text u-mb-big">
           <h2 class="heading-secondary">Most popular tours</h2>
         </div>
@@ -146,7 +185,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$299</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book now!</a>
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -177,7 +216,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$499</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book now!</a>
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -208,7 +247,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$899</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book now!</a>
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -220,7 +259,7 @@
         </div>
       </section>
 
-      <section class="section-stories">
+      <section id="section-stories" class="section-stories">
         <div class="bg-video">
           <video class="bg-video__content" autoplay muted loop>
             <source src="img/video.mp4" type="video/mp4" />
@@ -288,7 +327,7 @@
         </div>
       </section>
 
-      <section class="section-book">
+      <section id="section-book" class="section-book">
         <div class="row">
           <div class="book">
             <div class="book__form">
@@ -387,5 +426,36 @@
         </div>
       </div>
     </footer>
+
+    <div id="popup" class="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+          <img src="img/nat-8.jpg" class="popup__img" alt="First tour photo" />
+          <img src="img/nat-9.jpg" class="popup__img" alt="Second tour photo" />
+        </div>
+        <div class="popup__right">
+          <a href="#section-tours" class="popup__close">&times;</a>
+          <h2 class="heading-secondary u-mb-small">Start booking now</h2>
+          <h3 class="heading-tertiary u-mb-small">
+            Important &ndash; Please read these terms before booking
+          </h3>
+          <p class="popup__text">
+            Understanding these terms will ensure a smoother and more enjoyable
+            travel experience. Be sure to check the payment policies, including
+            the payment schedule, deposits, deadlines, and accepted payment
+            methods. Additionally, understand the cancellation policies,
+            including the rules, fees, and refund deadlines. Review the tour
+            itinerary to know the destinations, activities, and accommodations
+            included. Clarify what is covered in the tour cost and what might
+            incur additional charges. Be aware of any health requirements or
+            restrictions, and ensure you understand the tour operator's safety
+            measures. Determine if travel insurance is required or recommended
+            for the tour. Understand your responsibilities and those of the tour
+            operator during the trip.
+          </p>
+          <a href="#" class="btn btn--green">Book now</a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
