@@ -7,6 +7,10 @@
   text-align: center;
   transition: all .3s;
 
+  @include respond($tablet-portrait) {
+    padding: 2rem;
+  }
+
   &:hover {
     transform: translateY(-1.5rem) scale(1.03);
   }
@@ -15,5 +19,9 @@
     margin-bottom: 0.5rem;
     font-size: 6rem;
     @include gradient-text;
+
+    @include respond($tablet-portrait) {
+      margin-bottom: 0;
+    }
   }
 }

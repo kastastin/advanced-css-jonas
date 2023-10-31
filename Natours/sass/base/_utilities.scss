@@ -8,10 +8,18 @@
 
 .u-mb-medium {
   margin-bottom: 4rem !important;
+
+  @include respond($tablet-portrait) {
+    margin-bottom: 3rem !important;
+  }
 }
 
 .u-mb-big {
   margin-bottom: 8rem !important;
+
+  @include respond($tablet-portrait) {
+    margin-bottom: 5rem !important;
+  }
 }
 
 .u-mt-big {

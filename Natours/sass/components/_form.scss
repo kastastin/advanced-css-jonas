@@ -16,6 +16,10 @@
     font-size: 1.5rem;
     transition: all 0.3s;
 
+    @include respond($tablet-portrait) {
+      width: 100%;
+    }
+
     &:focus {
       outline: none;
       border-bottom: 3px solid $color-primary;
@@ -26,7 +30,7 @@
       border-bottom: 3px solid $color-secondary-dark;
     }
 
-    &::-webkit-input-placeholder {
+    &::placeholder {
       color: $color-grey-dark-2;
     }
   }
@@ -48,6 +52,11 @@
   &__radio-group {
     width: 49%;
     display: inline-block;
+
+    @include respond($tablet-portrait) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__radio-input {

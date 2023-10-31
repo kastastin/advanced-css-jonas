@@ -4,13 +4,16 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba($color-black, 0.2);
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+  background-color: rgba($color-black, 0.8);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3;
   z-index: 1000;
+
+  @supports (backdrop-filter: blur(3px)) {
+    backdrop-filter: blur(3px);
+    background-color: rgba($color-black, 0.2);
+  }
 
   &__content {
     width: 75%;
@@ -31,6 +34,11 @@
   &__left {
     width: 33.333333%;
     display: table-cell;
+    vertical-align: middle;
+
+    @include respond($tablet-landscape) {
+      display: none;
+    }
   }
 
   &__right {
@@ -38,6 +46,10 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include respond($tablet-portrait) {
+      padding: 2rem 3rem;
+    }
   }
 
   &__img {
@@ -49,12 +61,18 @@
     column-count: 2;
     column-gap: 4rem;
     column-rule: 1px solid $color-grey-light-2;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -webkit-hyphens: auto;
     hyphens: auto;
     margin-bottom: 4rem;
     font-size: 1.4rem;
+
+    @include respond($tablet-portrait) {
+      column-count: 1;
+      margin-bottom: 2rem;
+    }
+
+    @include respond($phone) {
+      font-size: 1.2rem;
+    }
   }
 
   // OPEN STATES
