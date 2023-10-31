@@ -17,3 +17,12 @@
   background-clip: text;
   color: transparent;
 }
+
+// MEDIA QUERY MANAGER
+@mixin respond($breakpoint, $position: 'max') {
+  $media_property: if($position == "min", "min-width", "max-width");
+
+  @media (#{$media_property}: (calc($breakpoint / 16px) * 1em)) {
+    @content;
+  }
+}
