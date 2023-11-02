@@ -87,17 +87,15 @@
   }
 
   &__close {
-    &:link,
-    &:visited {
-      position: absolute;
-      top: 2.5rem;
-      right: 2.5rem;
-      color: $color-grey-dark-1;
-      font-size: 3rem;
-      line-height: 1;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    display: inline-block;
+    color: $color-grey-dark-1;
+    font-size: 3rem;
+    line-height: 1;
+    text-decoration: none;cursor: pointer;
+    transition: all 0.2s;
 
     &:hover {
       color: $color-primary;
