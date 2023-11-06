@@ -21,6 +21,8 @@ Grey dark 3: #999
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --line: 1px solid var(--color-grey-light-2);
 }
 
 * {
@@ -64,7 +66,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
   font-size: 1.4rem;
 }
 
@@ -81,9 +83,28 @@ body {
 }
 
 .hotel-view {
-  height: 80rem;
   flex: 1;
   background-color: #fff;
+}
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  border-bottom: var(--line);
+  background-color: var(--color-grey-light-1);
+}
+
+.description {
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  padding: 3rem;
+  box-shadow: var(--shadow-light);
+  font-size: 1.4rem;
+}
+
+.user-reviews {
+  flex: 1;
+  background-color: yellowgreen;
 }
 
 .logo {
@@ -244,7 +265,7 @@ body {
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
 }
 .overview__heading {
   padding: 1.5rem 3rem;
@@ -323,4 +344,53 @@ body {
     transform: scale(1);
     box-shadow: none;
   }
+}
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  list-style-type: none;
+}
+.list__item {
+  flex: 0 0 50%;
+  margin-bottom: 0.7rem;
+}
+.list__item:before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.7rem;
+  background-color: var(--color-primary);
+  -webkit-mask-image: url(../img/chevron-thin-right.svg);
+  mask-image: url(../img/chevron-thin-right.svg);
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+.recommend {
+  display: flex;
+  align-items: center;
+  color: var(--color-grey-dark-3);
+  font-size: 1.3rem;
+}
+.recommend__count {
+  margin-right: auto;
+}
+.recommend__photo {
+  box-sizing: content-box;
+  width: 4rem;
+  height: 4rem;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+.recommend__photo:not(:last-child) {
+  margin-right: -1.5rem;
 }
