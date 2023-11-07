@@ -9,6 +9,12 @@
   justify-content: center;
   align-items: center;
 
+  @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+  }
+
   &__input {
     width: 90%;
     margin-right: -3.25rem;
@@ -111,11 +117,24 @@
   font-size: 1.4rem;
   list-style-type: none;
 
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    margin: 0;
+  }
+
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media only screen and (max-width: $bp-medium) {
+        margin: 0;
+      }
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      flex: 1;
     }
   }
 
@@ -152,6 +171,16 @@
     text-decoration: none;
     text-transform: uppercase;
     z-index: 2;
+
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   &__icon {
@@ -159,6 +188,13 @@
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor;
+
+    @media only screen and (max-width: $bp-small) {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0;
+      margin-bottom: 0.7rem;
+    }
   }
 }
 
@@ -167,6 +203,10 @@
   color: var(--color-grey-light-4);
   font-size: 1.2rem;
   text-align: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
 }
 
 .gallery {
@@ -189,6 +229,11 @@
     font-weight: 300;
     letter-spacing: 1px;
     text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 1.25rem 2rem;
+      font-size: 1.8rem;
+    }
   }
 
   &__stars {
@@ -223,17 +268,29 @@
     padding: 0 2.25rem;
     background-color: var(--color-primary);
     color: #fff;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     margin-bottom: -3px;
     font-size: 0.8rem;
     text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 0.5rem;
+    }
   }
 }
 
@@ -308,13 +365,17 @@
     width: 1rem;
     height: 1rem;
     margin-right: 0.7rem;
-    // background-image: url(../img/chevron-thin-right.svg);
-    // background-size: cover;
-    background-color: var(--color-primary);
-    -webkit-mask-image: url(../img/chevron-thin-right.svg);
-    mask-image: url(../img/chevron-thin-right.svg);
-    -webkit-mask-size: cover;
-    mask-size: cover;
+
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover;
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      background-image: none;
+      background-color: var(--color-primary);
+      -webkit-mask-image: url(../img/chevron-thin-right.svg);
+      mask-image: url(../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask-size: cover;
+    }
   }
 }
 
@@ -328,6 +389,10 @@
     margin-right: auto;
   }
 
+  &__friends {
+    display: flex;
+  }
+
   &__photo {
     box-sizing: content-box;
     width: 4rem;
@@ -336,7 +401,7 @@
     border-radius: 50%;
 
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -348,6 +413,11 @@
   box-shadow: var(--shadow-light);
   background-color: #fff;
   overflow: hidden;
+
+  @media only screen and (max-width: $bp-medium) {
+    margin-bottom: 3rem;
+    padding: 2rem;
+  }
 
   &__text {
     position: relative;
@@ -405,6 +475,10 @@
 .cta {
   padding: 3.5rem 0;
   text-align: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2.5rem 0;
+  }
 
   &__book-now {
     margin-bottom: 2rem;
